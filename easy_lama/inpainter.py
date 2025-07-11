@@ -12,7 +12,7 @@ from safetensors.torch import load_file as load_safetensors
 from .model import LamaModel
 from .utils import download_model, preprocess_image, postprocess_result, pad_to_modulo
 
-class TextureInpainter:
+class Inpainter:
     """Simple LAMA inpainting interface with safetensors support."""
     
     def __init__(self, device: str = "auto", model_size: str = "big", use_safetensors: bool = True):

@@ -1,4 +1,4 @@
-from easy_lama import TextureInpainter
+from easy_lama import Inpainter
 from PIL import Image
 import numpy as np
 
@@ -7,7 +7,7 @@ def main():
     
     # Initialize the inpainter (downloads model on first use, uses safetensors by default)
     print("Initializing LAMA inpainter with safetensors (safe format)...")
-    inpainter = TextureInpainter(use_safetensors=True)
+    inpainter = Inpainter(use_safetensors=True)
     
     # Example 1: Using PIL Images
     print("Example 1: PIL Image input")
@@ -45,7 +45,7 @@ def main():
     # Example 4: Using PyTorch format (if needed)
     print("Example 4: Using PyTorch format instead of safetensors")
     try:
-        pytorch_inpainter = TextureInpainter(use_safetensors=False)
+        pytorch_inpainter = Inpainter(use_safetensors=False)
         result_pt = pytorch_inpainter.inpaint(test_img, test_mask)
         Image.fromarray(result_pt).save("test_pytorch.jpg")
         print("Saved test_pytorch.jpg")
@@ -55,7 +55,7 @@ def main():
     # Example 5: Convert existing model (if you have one)
     print("Example 5: Model conversion (if you have a PyTorch model)")
     try:
-        from lama_inpainting.convert import convert_pytorch_to_safetensors
+        from easy_lama.convert import convert_pytorch_to_safetensors
         # convert_pytorch_to_safetensors("my_model.pt", "my_model.safetensors")
         print("Use: lama-convert my_model.pt")
     except ImportError:
