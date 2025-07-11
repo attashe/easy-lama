@@ -1,4 +1,4 @@
-from lama_inpainting import TextureInpainter
+from easy_lama import TextureInpainter
 from PIL import Image
 import numpy as np
 

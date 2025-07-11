@@ -2,13 +2,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="lama-inpainting",
+    name="easy_lama",
     version="1.0.0",
     description="Streamlined LAMA (Large Mask Inpainting) inference library",
     long_description="A clean, minimal implementation of LAMA inpainting with simple API",
     author="Your Name",
     author_email="your.email@example.com",
-    url="https://github.com/yourusername/lama-inpainting",
+    url="https://github.com/yourusername/easy-lama",
     packages=find_packages(),
     install_requires=[
         "torch>=1.8.0",
@@ -21,8 +21,8 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'lama-inpaint=lama_inpainting.cli:main',
-            'lama-convert=lama_inpainting.convert:main',
+            'lama-inpaint=easy_lama.cli:main',
+            'lama-convert=easy_lama.convert:main',
         ],
     },
     python_requires=">=3.7",
